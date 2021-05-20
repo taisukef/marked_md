@@ -16,7 +16,15 @@ const markdown = (html, comp) => {
 class MarkDown extends HTMLElement {
   constructor() {
     super();
-    markdown(this.textContent, this);
+    const src = this.getAttribute("src");
+    if (src) {
+      (async () => {
+        const text = await (await fetch(src)).text();
+        markdown(text, this);
+      })();
+    } else {
+      markdown(this.textContent, this);
+    }
   }
 }
 
