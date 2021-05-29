@@ -15,7 +15,7 @@ export class Slugger {
       // remove unwanted chars
       .replace(/[\u2000-\u206F\u2E00-\u2E7F\\'!"#$%&()*+,./:;<=>?@[\]^`{|}~]/g, '')
       // remove unwanted chars 2
-      .replace(/[（）]/g, "")
+      .replace(/[（）●]/g, "")
       .replace(/\s/g, '-');
   }
 
