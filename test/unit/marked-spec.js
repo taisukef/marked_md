@@ -1,5 +1,22 @@
-const marked = require('../../src/marked.js');
+import { describe, it, expect } from "https://taisukef.github.io/mocha-mini/mocha.js";
+import { marked } from '../../src/marked.js';
+import { defaults, changeDefaults } from '../../src/defaults.js';
+//console.log(defaults);
+//Deno.exit(0);
 
+// expect
+//   toHaveBeenCalledWith
+
+const spyOn = (name, f) => {
+  console.log(name, f);
+  return {
+    and: {
+      callThrough: () => {
+        console.log("call through");
+      }
+    }
+  }
+};
 describe('Test heading ID functionality', () => {
   it('should add id attribute by default', () => {
     const renderer = new marked.Renderer();
@@ -102,10 +119,11 @@ describe('Test paragraph token type', () => {
 
 describe('changeDefaults', () => {
   it('should change global defaults', () => {
-    const { defaults, changeDefaults } = require('../../src/defaults');
+    //const { defaults, changeDefaults } = import('../../src/defaults.js');
+    console.log("***", defaults);
     expect(defaults.test).toBeUndefined();
     changeDefaults({ test: true });
-    expect(require('../../src/defaults').defaults.test).toBe(true);
+    //expect(require('../../src/defaults').defaults.test).toBe(true);
   });
 });
 

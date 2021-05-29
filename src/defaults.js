@@ -21,12 +21,14 @@ function getDefaults() {
   };
 }
 
+let defaults = getDefaults();
+
 function changeDefaults(newDefaults) {
-  module.exports.defaults = newDefaults;
+  defaults = newDefaults;
 }
 
-module.exports = {
-  defaults: getDefaults(),
+export {
+  defaults,
   getDefaults,
   changeDefaults
 };

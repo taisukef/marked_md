@@ -1,8 +1,8 @@
-const {
+import {
   noopTest,
   edit,
   merge
-} = require('./helpers.js');
+} from './helpers.js';
 
 /**
  * Block-Level Grammar
@@ -304,7 +304,7 @@ inline.breaks = merge({}, inline.gfm, {
     .getRegex()
 });
 
-module.exports = {
+export {
   block,
   inline
 };

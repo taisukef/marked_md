@@ -1,19 +1,19 @@
-const Lexer = require('./Lexer.js');
-const Parser = require('./Parser.js');
-const Tokenizer = require('./Tokenizer.js');
-const Renderer = require('./Renderer.js');
-const TextRenderer = require('./TextRenderer.js');
-const Slugger = require('./Slugger.js');
-const {
+import { Lexer } from './Lexer.js';
+import { Parser } from './Parser.js';
+import { Tokenizer } from './Tokenizer.js';
+import { Renderer } from './Renderer.js';
+import { TextRenderer } from './TextRenderer.js';
+import { Slugger } from './Slugger.js';
+import {
   merge,
   checkSanitizeDeprecation,
   escape
-} = require('./helpers.js');
-const {
+} from './helpers.js';
+import {
   getDefaults,
   changeDefaults,
   defaults
-} = require('./defaults.js');
+} from './defaults.js';
 
 /**
  * Marked
@@ -267,4 +267,4 @@ marked.Slugger = Slugger;
 
 marked.parse = marked;
 
-module.exports = marked;
+export { marked };

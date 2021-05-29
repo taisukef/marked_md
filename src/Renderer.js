@@ -1,13 +1,13 @@
-const { defaults } = require('./defaults.js');
-const {
+import { defaults } from './defaults.js';
+import {
   cleanUrl,
   escape
-} = require('./helpers.js');
+} from './helpers.js';
 
 /**
  * Renderer
  */
-module.exports = class Renderer {
+export class Renderer {
   constructor(options) {
     this.options = options || defaults;
   }
